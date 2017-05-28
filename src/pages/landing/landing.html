@@ -1,0 +1,49 @@
+<!--
+  Generated template for the LandingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary" center>
+        <ion-title>Welcome</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-sm-1 col-md-2 col-xl-3></ion-col>
+            <ion-col col-12 col-sm-10 col-md-8 col-xl-6 justify-content-center>
+                <img src="assets/img/header.png" alt="header">
+
+                <button ion-button block (click)="goToHome()">
+                  Start record your journey.
+                </button>
+                <ion-buttons end>
+                    <button ion-button clear (click)="goToSignup()">
+                      Sign-up.
+                    </button>
+                </ion-buttons>
+                <br><br><br><br>
+                <button ion-button icon-left block color="dark" (click)="goToLogin()">
+                  <ion-icon name="mail"></ion-icon>
+                  Login with email.
+                </button>
+                <button ion-button icon-left block color="facebook" (click)="loginFacebook()">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                  Login with facebook.
+                </button>
+            </ion-col>
+            <ion-col col-sm-1 col-md-2 col-xl-3></ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+    <app-version></app-version>
+</ion-footer>

@@ -1,0 +1,48 @@
+<!--
+  Generated template for the JourneyCreatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>New Journey</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>When</ion-label>
+        <ion-datetime displayFormat="D MMM, YY HH:mm" pickerFormat="DD MMM YYYY HH:mm" [(ngModel)]="journey.dateTime"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Title</ion-label>
+        <ion-input [(ngModel)]="journey.title" type="text" placeholder="Your journey name."></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Location</ion-label>
+        <ion-input [(ngModel)]="journey.location" type="text" placeholder="Your place."></ion-input>
+    </ion-item>
+    <ion-item>
+        <button ion-button icon-left block (click)="openMap()">
+          <ion-icon name="map"></ion-icon>
+          Location Map &nbsp;
+          <span *ngIf="journey?.locationGPS"><ion-icon name="checkmark"></ion-icon></span>
+          <span *ngIf="!journey?.locationGPS"><ion-icon name="help"></ion-icon></span>
+        </button>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Interested</ion-label>
+        <ion-range min="1" max="5" step="1" snaps="true" [(ngModel)]="journey.stars">
+            <ion-icon small range-left name="star"></ion-icon>
+            <ion-icon range-right name="star"></ion-icon>
+        </ion-range>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked>Note</ion-label>
+        <ion-textarea [(ngModel)]="journey.note" placeholder="Your story."></ion-textarea>
+    </ion-item>
+    <button ion-button block (click)="createJourney()">Create Journey</button>
+</ion-content>
