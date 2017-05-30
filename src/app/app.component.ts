@@ -4,6 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthDataProvider } from "../providers/auth-data/auth-data";
 
+import { TabsPage } from '../pages/tabs/tabs';
+
 import firebase from "firebase";
 
 //import { HomePage } from '../pages/home/home';
@@ -11,7 +13,8 @@ import firebase from "firebase";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = 'LandingPage';
+  //rootPage: any = 'LandingPage';
+  rootPage = TabsPage;
   zone: NgZone;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public authData: AuthDataProvider) {

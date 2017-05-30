@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Camera } from "@ionic-native/camera";
@@ -11,6 +12,14 @@ import { MyApp } from './app.component';
 import { JourneyDataProvider } from '../providers/journey-data/journey-data';
 import { AuthDataProvider } from '../providers/auth-data/auth-data';
 import { ProfileDataProvider } from '../providers/profile-data/profile-data';
+
+import {TabsPage} from '../pages/tabs/tabs';
+import {TrackPage} from "../pages/track/track";
+import {AlbumPage} from "../pages/album/album";
+import {PlaylistPage} from "../pages/playlist/playlist";
+import {SettingsPage} from '../pages/settings/settings';
+
+import {SpotifyService} from "../providers/spotify.service";
 //import { AppVersionComponent } from '../components/app-version/app-version';
 //import { DummyArrayPipeModule } from "../pipes/dummy-array/dummy-array.module";
 //import { JourneyPhotosComponent } from '../components/journey-photos/journey-photos';
@@ -26,6 +35,11 @@ class CameraMock extends Camera {
 @NgModule({
   declarations: [
     MyApp,
+    SettingsPage,
+    TrackPage,
+    AlbumPage,
+    PlaylistPage,
+    TabsPage
     //AppVersionComponent,
     //    JourneyPhotosComponent,
   ],
@@ -37,6 +51,11 @@ class CameraMock extends Camera {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    SettingsPage,
+    TrackPage,
+    AlbumPage,
+    PlaylistPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

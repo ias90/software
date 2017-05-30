@@ -1,0 +1,49 @@
+<!--
+  Generated template for the Playlist page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title>Playlist</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="tracks">
+    <ion-card *ngFor="let track of tracks">
+      <div>
+        <ion-item>
+          <h2>{{track.name}}</h2>
+          <p>{{track.album.name}}</p>
+          <button ion-button clear item-right icon-only (click)="removeFromPlaylist(track)">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-item>
+
+        <img src="{{track.album.images[0].url}}" (click)="showMore(track)">
+      </div>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <ion-note>
+              {{track.popularity}}
+            </ion-note>
+          </button>
+        </ion-col>
+        <ion-col>
+          <a ion-button icon-left clear small href="{{track.external_urls.spotify}}">
+            <ion-icon name="share-alt"></ion-icon>
+            <div>Open in Spotify</div>
+          </a>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+
+</ion-content>
